@@ -1,0 +1,15 @@
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\bin\Debug\net6.0\assignment 1.exe
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\bin\Debug\net6.0\assignment 1.deps.json
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\bin\Debug\net6.0\assignment 1.runtimeconfig.json
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\bin\Debug\net6.0\assignment 1.dll
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\bin\Debug\net6.0\ref\assignment 1.dll
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\bin\Debug\net6.0\assignment 1.pdb
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\obj\Debug\net6.0\assignment 1.csproj.AssemblyReference.cache
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\obj\Debug\net6.0\assignment 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\obj\Debug\net6.0\assignment 1.AssemblyInfoInputs.cache
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\obj\Debug\net6.0\assignment 1.AssemblyInfo.cs
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\obj\Debug\net6.0\assignment 1.csproj.CoreCompileInputs.cache
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\obj\Debug\net6.0\assignment 1.dll
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\obj\Debug\net6.0\ref\assignment 1.dll
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\obj\Debug\net6.0\assignment 1.pdb
+C:\Users\oldma\Desktop\scripts\.School_ict\.davinki\year 2\oop\assignment 1\assignment 1\obj\Debug\net6.0\assignment 1.genruntimeconfig.cache
