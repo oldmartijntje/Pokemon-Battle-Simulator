@@ -5,15 +5,16 @@
 
         Console.WriteLine("Enter a name for your Charmander:");
         string name = Console.ReadLine();
-        Charmander charmander = new Charmander(name, 5);
+        Charmander charmander = new Charmander(name);
         Pokeball pokeball = new Pokeball(charmander);
-        var belt = new List<Pokeball> { pokeball, pokeball, pokeball, pokeball, pokeball, pokeball, pokeball };
+        var belt = new List<Pokeball> {  };
         Trainer henk = new Trainer("henk", belt);
         for (int i = 0; i < 10; i++)
         {
-            Pokemon selected = pokeball.SelectPokemon();
-            pokeball.ReturnPokemon(selected);
-            pokeball.ReturnPokemon(selected);
+            Pokemon selected = pokeball.SelectPokemon(henk.Name);
+            pokeball.SelectPokemon(henk.Name);
+            pokeball.ReturnPokemon(selected, henk.Name);
+            pokeball.ReturnPokemon(selected, henk.Name);
         }
         Console.ReadLine();
 

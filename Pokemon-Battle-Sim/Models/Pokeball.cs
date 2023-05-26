@@ -10,25 +10,34 @@
         TypePokeball = typePokeball;
     }
 
-    public Pokemon SelectPokemon()
+    public Pokemon? SelectPokemon(string trainerName)
     {
-        Console.WriteLine(Pokemon.Nickname + ", I choose you!");
-        Pokemon.BattleCry();
-        var TempPokemon = Pokemon;
-        Pokemon = null;
-        return TempPokemon;
+        Console.WriteLine(trainerName + " threw a " + TypePokeball);
+        if (Pokemon == null)
+        {
+            Console.WriteLine(trainerName + ": That's akward, it's already empty.");
+            return null;
+        } 
+        else
+        {
+            Console.WriteLine(trainerName + ": " + Pokemon.Nickname + ", I choose you!");
+            Pokemon.BattleCry();
+            var TempPokemon = Pokemon;
+            Pokemon = null;
+            return TempPokemon;
+        }
     }
 
-    public bool ReturnPokemon(Pokemon chosenPokemon)
+    public bool ReturnPokemon(Pokemon chosenPokemon, string trainerName)
     {
         
         if (Pokemon == null)
         {
-            Console.WriteLine(chosenPokemon.Nickname + ", Come back!");
+            Console.WriteLine(trainerName + ": " + chosenPokemon.Nickname + ", Come back!");
             Pokemon = chosenPokemon;
             return true;
         } else {
-            Console.WriteLine(Pokemon.Nickname + ", has already occupied this pokeball!");
+            Console.WriteLine(trainerName + ": " + Pokemon.Nickname + " has already occupied this pokeball! " + chosenPokemon.Nickname + " doesn't fit in there with him.");
             return false;
         }
             
