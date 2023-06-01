@@ -1,13 +1,28 @@
 ﻿public class Item
 {
     public string Name { get; }
-    public List<Pokeball> Belt { get; set; }
-    public Pokemon? ActivePokemon { get; set; }
-    public int? ActivePokemonBeltId { get; set; }
+    private bool IsPokeball { get; }
+    private int Amount { get; set; }
 
-    public Item(string name, List<Pokeball> belt)
+    public Item(string name, int amount, bool isPokeball)
     {
-        Belt = belt.Take(6).ToList();
         Name = name;
+        Amount = amount;
+        IsPokeball = isPokeball;
+    }
+
+    public int GetAmount()
+    {
+        return Amount;
+    }
+
+    public bool CheckForPokeball()
+    {
+        return IsPokeball;
+    }
+
+    public void SetAmount(int number)
+    {
+        this.Amount = number;
     }
 }
