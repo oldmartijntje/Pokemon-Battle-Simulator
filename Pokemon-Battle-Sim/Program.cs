@@ -3,8 +3,32 @@
     static void Main()
     {
 
-        Console.WriteLine("Enter a name for your Charmander:");
+        Console.WriteLine("Enter a name for player 1:");
         string name = Console.ReadLine();
+        List<Pokeball> emptyList = new List<Pokeball>();
+        Trainer player1 = new Trainer(name, emptyList);
+        Console.WriteLine("Enter a name for player 2:");
+        name = Console.ReadLine();
+        emptyList = new List<Pokeball>();
+        Trainer player2 = new Trainer(name, emptyList);
+        for (int i = 0; i < 6; i++)
+        {
+            player1.AddPokeballToBelt(new Pokeball(new Charmander("Koos Naamloos")));
+            player2.AddPokeballToBelt(new Pokeball(new Charmander("Spongebob")));
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            player1.SelectPokemonFromBelt(i);
+            player2.SelectPokemonFromBelt(i);
+            player2.SelectPokemonFromBelt(i);
+            player1.ActivePokemon.BattleCry();
+            player2.ActivePokemon.BattleCry();
+            player2.ActivePokemon.BattleCry();
+            player1.PutPokemonBackInBall();
+            player2.PutPokemonBackInBall();
+            player2.PutPokemonBackInBall();
+        }
+        Console.ReadLine();
         Charmander charmander = new Charmander(name);
         Pokeball pokeball = new Pokeball(charmander);
         var belt = new List<Pokeball> {  };
@@ -16,12 +40,6 @@
             pokeball.ReturnPokemon(selected, henk.Name);
             pokeball.ReturnPokemon(selected, henk.Name);
         }
-        Item blag = new Item();
-        Item blag2 = new Item();
-        Item blag3 = new Item();
-        pokeball.Pokemon.EquipItem(blag);
-        pokeball.Pokemon.EquipItem(blag2);
-        pokeball.Pokemon.EquipItem(blag3);
         henk.AssertDominance();
         henk.AssertDominance();
         Console.ReadLine();
