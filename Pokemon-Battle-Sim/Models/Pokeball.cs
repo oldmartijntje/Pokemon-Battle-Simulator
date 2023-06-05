@@ -30,12 +30,17 @@
 
     public bool ReturnPokemon(Pokemon chosenPokemon, string trainerName)
     {
-        
+
         if (Pokemon == null)
         {
             Console.WriteLine(trainerName + ": " + chosenPokemon.Nickname + ", Come back!");
             Pokemon = chosenPokemon;
             return true;
+        }
+        else if (chosenPokemon == null)
+        {
+            Console.WriteLine(trainerName + " tried to fill his Pokebll with CO2.");
+            return false;
         } else {
             Console.WriteLine(trainerName + ": " + Pokemon.Nickname + " has already occupied this pokeball! " + chosenPokemon.Nickname + " doesn't fit in there with him.");
             return false;

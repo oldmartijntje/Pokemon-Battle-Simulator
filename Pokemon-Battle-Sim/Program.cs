@@ -16,18 +16,28 @@
             player1.AddPokeballToBelt(new Pokeball(new Charmander("Koos Naamloos")));
             player2.AddPokeballToBelt(new Pokeball(new Charmander("Spongebob")));
         }
-        for (int i = 0; i < 6; i++)
+        while (true)
         {
-            player1.SelectPokemonFromBelt(i);
-            player2.SelectPokemonFromBelt(i);
-            player2.SelectPokemonFromBelt(i);
-            player1.ActivePokemon.BattleCry();
-            player2.ActivePokemon.BattleCry();
-            player2.ActivePokemon.BattleCry();
-            player1.PutPokemonBackInBall();
-            player2.PutPokemonBackInBall();
-            player2.PutPokemonBackInBall();
+            for (int i = 0; i < 6; i++)
+            {
+                player1.SelectPokemonFromBelt(i);
+                player2.SelectPokemonFromBelt(i);
+                player2.SelectPokemonFromBelt(i);
+                player1.ActivePokemon.BattleCry();
+                player2.ActivePokemon.BattleCry();
+                player2.ActivePokemon.BattleCry();
+                player1.PutPokemonBackInBall();
+                player2.PutPokemonBackInBall();
+                player2.PutPokemonBackInBall();
+            }
+            Console.WriteLine("Want them to torture their pokemon again? (Y) or want them to stop? (N)");
+            string answer = Console.ReadLine();
+            if (answer != "Y")
+            {
+                break;
+            }
         }
+        
         Console.ReadLine();
         Charmander charmander = new Charmander(name);
         Pokeball pokeball = new Pokeball(charmander);
