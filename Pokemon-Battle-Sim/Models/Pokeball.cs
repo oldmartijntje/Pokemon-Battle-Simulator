@@ -62,4 +62,28 @@
     {
         return this.TypePokeball;
     }
+
+    public string GetPokemonNickname(string ifEmptyReturn = "Air")
+    {
+        if (this.GetPokemon() == null)
+        {
+            return ifEmptyReturn;
+        }
+        else
+        {
+            return this.GetPokemon().GetNickname();
+        }
+    }
+
+    public string GetPokemonName(string ifEmptyReturn = "Air")
+    {
+        if (this.GetPokemon() == null)
+        {
+            return ifEmptyReturn;
+        }
+        else
+        {
+            return this.GetPokemon().GetName();
+        }
+    }
 }

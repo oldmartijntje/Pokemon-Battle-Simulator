@@ -32,15 +32,15 @@
         if (Item == null)
         {
             this.Item = item;
-            Console.WriteLine(this.GetNickname() + " has equipped " + Item.GetAmount() + "X " + Item.Name + ".");
+            Console.WriteLine(this.GetNickname() + " has equipped " + Item.GetAmount() + "X " + Item.GetName() + ".");
             return true;
         } else if (this.Item.GetType() == item.GetType()) 
         {
             this.Item.SetAmount(this.Item.GetAmount() + item.GetAmount());
-            Console.WriteLine(this.GetNickname() + " has equippped " + item.GetAmount() + " more " + Item.Name + ", total is: " + this.Item.GetAmount() + ".");
+            Console.WriteLine(this.GetNickname() + " has equippped " + item.GetAmount() + " more " + Item.GetName() + ", total is: " + this.Item.GetAmount() + ".");
             return true;
         } else {
-            Console.WriteLine(this.GetNickname() + " tried to equip " + item.GetAmount() + "X " + item.Name + ", but failed because he already carries " + Item.GetAmount() + "X " + Item.Name + ".");
+            Console.WriteLine(this.GetNickname() + " tried to equip " + item.GetAmount() + "X " + item.GetName() + ", but failed because he already carries " + Item.GetAmount() + "X " + Item.GetName() + ".");
             return false;
         }
     }

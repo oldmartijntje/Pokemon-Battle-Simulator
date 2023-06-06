@@ -1,6 +1,6 @@
 ﻿public class Item
 {
-    public string Name { get; }
+    private string Name { get; }
     private bool IsPokeball { get; }
     private int Amount { get; set; }
 
@@ -24,5 +24,10 @@
     public void SetAmount(int number)
     {
         this.Amount = number;
+    }
+
+    public string GetName()
+    {
+        return Name;
     }
 }

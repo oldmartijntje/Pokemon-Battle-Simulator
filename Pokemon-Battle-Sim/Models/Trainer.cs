@@ -1,10 +1,10 @@
 ﻿public class Trainer
 {
-    public string Name { get; }
-    public List<Pokeball> Belt { get; set; }
-    public Pokemon? ActivePokemon { get; set; }
-    public int? ActivePokemonBeltId { get; set; }
-    public List<object> Bag { get; set; }
+    private string Name { get; }
+    private List<Pokeball> Belt { get; set; }
+    private Pokemon? ActivePokemon { get; set; }
+    private int? ActivePokemonBeltId { get; set; }
+    private List<object> Bag { get; set; }
 
     public Trainer(string name, List<Pokeball?> belt)
     {
@@ -14,15 +14,15 @@
 
     public bool AddPokeballToBelt(Pokeball pokeball)
     {
-        if (Belt.Count + 1 > 6)
+        if (this.GetBelt().Count + 1 > 6)
         {
-            Console.WriteLine(this.Name + ": Sorry " + pokeball.Pokemon.GetNickname() + ", but my belt is already full. Your pokeball can't fit on my belt.");
+            Console.WriteLine(this.GetName() + ": Sorry " + pokeball.GetPokemonNickname("Empty Pokeball") + ", but my belt is already full. Your pokeball can't fit on my belt.");
             return false;
         }
         else
         {
-            Belt.Add(pokeball);
-            Console.WriteLine(this.Name + " puts a pokeball containing " + pokeball.Pokemon.GetName() + " on his belt.");
+            this.GetBelt().Add(pokeball);
+            Console.WriteLine(this.GetName() + " puts a pokeball containing " + pokeball.GetPokemonName("CO2") + " on his belt.");
             return true;
         }
     }
@@ -31,19 +31,24 @@
     {
         if (Id -1 > 5)
         {
-            Console.WriteLine(this.Name + ": I can't have more than 6 pokeballs on my belt.");
+            Console.WriteLine(this.GetName() + ": I can't have more than 6 pokeballs on my belt.");
+            return null;
+        }
+        else if (Id == this.GetActivePokemonBeltId())
+        {
+            Console.WriteLine(this.GetName() + ": I probably shoudn't switch out a Pokeball from the Pokemon that is in the field.");
             return null;
         }
         else
         {
-            Pokeball temporaryPokemon = Belt[Id - 1];
+            Pokeball? temporaryPokemon = this.GetBelt()[Id - 1];
             if (temporaryPokemon == null)
             {
-                Console.WriteLine(this.Name + ": that slot is empty, i can't switch it.");
+                Console.WriteLine(this.GetName() + ": that slot is empty, i can't switch a Pokebll with air.");
                 return null;
             } else {
-                Belt[Id - 1] = pokeball;
-                Console.WriteLine(this.Name + " switched a pokeball from his belt with another one.");
+                this.GetBelt()[Id - 1] = pokeball;
+                Console.WriteLine(this.GetName() + " switched a pokeball from his belt with another one.");
                 return temporaryPokemon;
             }
 
@@ -52,31 +57,31 @@
 
     public bool SelectPokemonFromBelt(int beltId)
     {
-        if (this.ActivePokemonBeltId == null)
+        if (this.GetActivePokemonBeltId() == null)
         {
-            this.ActivePokemon = Belt[beltId].SelectPokemon(this.Name);
-            if (this.ActivePokemon != null)
+            this.SetActivePokemon(this.GetBelt()[beltId].SelectPokemon(this.GetName()));
+            if (this.GetActivePokemon() != null)
             {
-                this.ActivePokemonBeltId = beltId;
+                this.SetActivePokemonBeltId(beltId);
                 return true;
             } else
             {
-                this.ActivePokemonBeltId = null;
+                this.SetActivePokemonBeltId(null);
                 return false;
             }
         } else
         {
-            int tempVar = this.ActivePokemonBeltId ?? 0;
-            Belt[tempVar].ReturnPokemon(this.ActivePokemon, this.Name);
-            this.ActivePokemon = Belt[beltId].SelectPokemon(this.Name);
-            if (this.ActivePokemon != null)
+            int tempVar = this.GetActivePokemonBeltId() ?? 0;
+            this.GetBelt()[tempVar].ReturnPokemon(this.GetActivePokemon(), this.GetName());
+            this.SetActivePokemon(this.GetBelt()[beltId].SelectPokemon(this.GetName()));
+            if (this.GetActivePokemon() != null)
             {
-                this.ActivePokemonBeltId = beltId;
+                this.SetActivePokemonBeltId(beltId);
                 return true;
             }
             else
             {
-                this.ActivePokemonBeltId = null;
+                this.SetActivePokemonBeltId(null);
                 return false;
             }
         }
@@ -127,8 +132,51 @@
 
     public void PutPokemonBackInBall()
     {
-        this.Belt[this.ActivePokemonBeltId ?? 0].ReturnPokemon(this.ActivePokemon, this.Name);
-        this.ActivePokemonBeltId = null;
-        this.ActivePokemon = null;
+        this.GetBelt()[this.GetActivePokemonBeltId() ?? 0].ReturnPokemon(this.GetActivePokemon(), this.GetName());
+        this.SetActivePokemonBeltId(null);
+        this.SetActivePokemon(null);
+    }
+
+    public int? GetActivePokemonBeltId()
+    {
+        return this.ActivePokemonBeltId;
+    }
+
+    private bool SetActivePokemonBeltId(int? id)
+    {
+        if (id == null)
+        {
+            this.ActivePokemonBeltId = null;
+            return true;
+        }
+        else if (id > 5)
+        {
+            return false;
+        }
+        else
+        {
+            this.ActivePokemonBeltId = id;
+            return true;
+        }
+    } 
+
+    public string GetName()
+    {
+        return this.Name;
+    }
+
+    private List<Pokeball> GetBelt()
+    {
+        return this.Belt;
+    }
+
+    public Pokemon? GetActivePokemon()
+    {
+        return this.ActivePokemon;
+    }
+
+    public void SetActivePokemon(Pokemon pokemon)
+    {
+        this.ActivePokemon = pokemon;
     }
 }

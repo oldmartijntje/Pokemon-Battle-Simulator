@@ -23,9 +23,9 @@
                 player1.SelectPokemonFromBelt(i);
                 player2.SelectPokemonFromBelt(i);
                 player2.SelectPokemonFromBelt(i);
-                player1.ActivePokemon.BattleCry();
-                player2.ActivePokemon.BattleCry();
-                player2.ActivePokemon.BattleCry();
+                player1.GetActivePokemon().BattleCry();
+                player2.GetActivePokemon().BattleCry();
+                player2.GetActivePokemon().BattleCry();
                 player1.PutPokemonBackInBall();
                 player2.PutPokemonBackInBall();
                 player2.PutPokemonBackInBall();
@@ -45,14 +45,14 @@
         Trainer henk = new Trainer("henk", belt);
         for (int i = 0; i < 10; i++)
         {
-            Pokemon selected = pokeball.SelectPokemon(henk.Name);
-            pokeball.SelectPokemon(henk.Name);
-            pokeball.ReturnPokemon(selected, henk.Name);
-            pokeball.ReturnPokemon(selected, henk.Name);
+            Pokemon selected = pokeball.SelectPokemon(henk.GetName());
+            pokeball.SelectPokemon(henk.GetName());
+            pokeball.ReturnPokemon(selected, henk.GetName());
+            pokeball.ReturnPokemon(selected, henk.GetName());
         }
         henk.AssertDominance();
-        henk.AssertDominance(player1.Name);
-        henk.AssertDominance(player2.Name);
+        henk.AssertDominance(player1.GetName());
+        henk.AssertDominance(player2.GetName());
         Console.ReadLine();
 
     }
