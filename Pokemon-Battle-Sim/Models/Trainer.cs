@@ -4,7 +4,7 @@
     private List<Pokeball> Belt;
     private Pokemon? ActivePokemon;
     private int? ActivePokemonBeltId;
-    private List<object> Bag;
+    //private List<Item> Bag;
 
     public Trainer(string name, List<Pokeball?> belt)
     {

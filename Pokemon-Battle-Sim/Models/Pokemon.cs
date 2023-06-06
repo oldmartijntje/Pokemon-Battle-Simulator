@@ -3,9 +3,8 @@
     private string Name;
     private string Nickname;
     private string Type;
-    private Item? Item;
+    //private Item? Item;
     private string Sound;
-    // no moves yet
 
     public Pokemon(string name, string? nickname, string type, Item? item, string sound)
     {
@@ -18,13 +17,13 @@
             Nickname = nickname;
         }
         Type = type;
-        this.Item = item;
+        //this.Item = item;
         Sound = sound;
     }
 
     public abstract void BattleCry();
 
-    public bool EquipItem(Item item)
+    /*public bool EquipItem(Item item)
     {
         if (Item == null)
         {
@@ -40,7 +39,7 @@
             Console.WriteLine(this.GetNickname() + " tried to equip " + item.GetAmount() + "X " + item.GetName() + ", but failed because he already carries " + Item.GetAmount() + "X " + Item.GetName() + ".");
             return false;
         }
-    }
+    }*/
 
     public void SetNickname(string newName)
     {
@@ -67,10 +66,17 @@
         return Sound;
     }
 
-    public Item? GetEquippedItem()
+    /*public Item? GetEquippedItem()
     {
         return this.Item;
-    }
+    }*/
+
+    /*public Item UnequipItem()
+    {
+        Item temp = this.Item;
+        this.Item = null;
+        return temp;
+    }*/
 
     public void ChangeSound(string sound)
     {
