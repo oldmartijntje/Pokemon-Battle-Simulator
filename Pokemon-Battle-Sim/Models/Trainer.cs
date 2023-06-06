@@ -1,10 +1,10 @@
 ﻿public class Trainer
 {
-    private string Name { get; }
-    private List<Pokeball> Belt { get; set; }
-    private Pokemon? ActivePokemon { get; set; }
-    private int? ActivePokemonBeltId { get; set; }
-    private List<object> Bag { get; set; }
+    private string Name;
+    private List<Pokeball> Belt;
+    private Pokemon? ActivePokemon;
+    private int? ActivePokemonBeltId;
+    private List<object> Bag;
 
     public Trainer(string name, List<Pokeball?> belt)
     {

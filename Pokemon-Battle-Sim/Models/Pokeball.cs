@@ -1,7 +1,7 @@
 ﻿public class Pokeball
 {
-    private string TypePokeball { get; }
-    private Pokemon? Pokemon { get; set; }
+    private string TypePokeball;
+    private Pokemon? Pokemon;
     // no moves yet
 
     public Pokeball(Pokemon? pokemon, string typePokeball = "Pokeball")

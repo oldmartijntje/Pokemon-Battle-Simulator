@@ -1,10 +1,10 @@
 ﻿public class Pokemon
 {
-    private string Name { get; }
-    private string Nickname { get; set; }
-    private string Type { get; }
-    private Item? Item { get; set; }
-    private string Sound { get; }
+    private string Name;
+    private string Nickname;
+    private string Type;
+    private Item? Item;
+    private string Sound;
     // no moves yet
 
     public Pokemon(string name, string? nickname, string type, Item? item, string sound)

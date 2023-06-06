@@ -1,8 +1,8 @@
 ﻿public class Item
 {
-    private string Name { get; }
-    private bool IsPokeball { get; }
-    private int Amount { get; set; }
+    private string Name;
+    private bool IsPokeball;
+    private int Amount;
 
     public Item(string name, int amount, bool isPokeball)
     {
