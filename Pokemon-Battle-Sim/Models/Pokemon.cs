@@ -1,7 +1,7 @@
 ﻿public class Pokemon
 {
-    public string Name { get; }
-    public string Nickname { get; set; }
+    private string Name { get; }
+    private string Nickname { get; set; }
     private string Type { get; }
     private Item? Item { get; set; }
     private string Sound { get; }
@@ -24,7 +24,7 @@
 
     public void BattleCry()
     {
-        Console.WriteLine(Nickname + ": " + Sound + "!");
+        Console.WriteLine(this.GetNickname() + ": " + this.GetSound() + "!");
     }
 
     public bool EquipItem(Item item)
@@ -32,15 +32,15 @@
         if (Item == null)
         {
             this.Item = item;
-            Console.WriteLine(Nickname + " has equipped " + Item.GetAmount() + "X " + Item.Name + ".");
+            Console.WriteLine(this.GetNickname() + " has equipped " + Item.GetAmount() + "X " + Item.Name + ".");
             return true;
         } else if (this.Item.GetType() == item.GetType()) 
         {
             this.Item.SetAmount(this.Item.GetAmount() + item.GetAmount());
-            Console.WriteLine(Nickname + " has equippped " + item.GetAmount() + " more " + Item.Name + ", total is: " + this.Item.GetAmount() + ".");
+            Console.WriteLine(this.GetNickname() + " has equippped " + item.GetAmount() + " more " + Item.Name + ", total is: " + this.Item.GetAmount() + ".");
             return true;
         } else {
-            Console.WriteLine(Nickname + " tried to equip " + item.GetAmount() + "X " + item.Name + ", but failed because he already carries " + Item.GetAmount() + "X " + Item.Name + ".");
+            Console.WriteLine(this.GetNickname() + " tried to equip " + item.GetAmount() + "X " + item.Name + ", but failed because he already carries " + Item.GetAmount() + "X " + Item.Name + ".");
             return false;
         }
     }
@@ -48,6 +48,31 @@
     public void SetNickname(string newName)
     {
         Nickname = newName;
+    }
+
+    public string GetName()
+    {
+        return Name;
+    }
+
+    public string GetNickname()
+    {
+        return Nickname;
+    }
+
+    public string GetType()
+    {
+        return Type;
+    }
+
+    public string GetSound()
+    {
+        return Sound;
+    }
+
+    public Item? GetEquippedItem()
+    {
+        return this.Item;
     }
 
 

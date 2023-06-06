@@ -1,7 +1,7 @@
 ﻿public class Pokeball
 {
-    public string TypePokeball { get; }
-    public Pokemon? Pokemon { get; set; }
+    private string TypePokeball { get; }
+    private Pokemon? Pokemon { get; set; }
     // no moves yet
 
     public Pokeball(Pokemon? pokemon, string typePokeball = "Pokeball")
@@ -12,18 +12,18 @@
 
     public Pokemon? SelectPokemon(string trainerName)
     {
-        Console.WriteLine(trainerName + " threw a " + TypePokeball);
-        if (Pokemon == null)
+        Console.WriteLine(trainerName + " threw a " + this.GetPokeballType());
+        if (this.GetPokemon() == null)
         {
             Console.WriteLine(trainerName + ": That's akward, it's already empty.");
             return null;
         } 
         else
         {
-            Console.WriteLine(trainerName + ": " + Pokemon.Nickname + ", I choose you!");
-            Pokemon.BattleCry();
-            var TempPokemon = Pokemon;
-            Pokemon = null;
+            Console.WriteLine(trainerName + ": " + this.GetPokemon().GetNickname() + ", I choose you!");
+            this.GetPokemon().BattleCry();
+            var TempPokemon = this.GetPokemon();
+            this.SetPokemon(null);
             return TempPokemon;
         }
     }
@@ -31,10 +31,10 @@
     public bool ReturnPokemon(Pokemon chosenPokemon, string trainerName)
     {
 
-        if (Pokemon == null)
+        if (this.GetPokemon() == null)
         {
-            Console.WriteLine(trainerName + ": " + chosenPokemon.Nickname + ", Come back!");
-            Pokemon = chosenPokemon;
+            Console.WriteLine(trainerName + ": " + chosenPokemon.GetNickname() + ", Come back!");
+            this.SetPokemon(chosenPokemon);
             return true;
         }
         else if (chosenPokemon == null)
@@ -42,10 +42,24 @@
             Console.WriteLine(trainerName + " tried to fill his Pokebll with CO2.");
             return false;
         } else {
-            Console.WriteLine(trainerName + ": " + Pokemon.Nickname + " has already occupied this pokeball! " + chosenPokemon.Nickname + " doesn't fit in there with him.");
+            Console.WriteLine(trainerName + ": " + this.GetPokemon().GetNickname() + " has already occupied this pokeball! " + chosenPokemon.GetNickname() + " doesn't fit in there with him.");
             return false;
         }
             
+    }
 
+    private void SetPokemon(Pokemon? pokemon)
+    {
+        this.Pokemon = pokemon;
+    }
+
+    public Pokemon? GetPokemon()
+    {
+        return this.Pokemon;
+    }
+
+    public string GetPokeballType()
+    {
+        return this.TypePokeball;
     }
 }

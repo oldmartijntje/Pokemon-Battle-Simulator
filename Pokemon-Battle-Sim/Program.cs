@@ -51,7 +51,8 @@
             pokeball.ReturnPokemon(selected, henk.Name);
         }
         henk.AssertDominance();
-        henk.AssertDominance();
+        henk.AssertDominance(player1.Name);
+        henk.AssertDominance(player2.Name);
         Console.ReadLine();
 
     }

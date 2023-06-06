@@ -16,13 +16,13 @@
     {
         if (Belt.Count + 1 > 6)
         {
-            Console.WriteLine(this.Name + ": Sorry " + pokeball.Pokemon.Nickname + ", but my belt is already full. Your pokeball can't fit on my belt.");
+            Console.WriteLine(this.Name + ": Sorry " + pokeball.Pokemon.GetNickname() + ", but my belt is already full. Your pokeball can't fit on my belt.");
             return false;
         }
         else
         {
             Belt.Add(pokeball);
-            Console.WriteLine(this.Name + " puts a pokeball containing " + pokeball.Pokemon.Name + " on his belt.");
+            Console.WriteLine(this.Name + " puts a pokeball containing " + pokeball.Pokemon.GetName() + " on his belt.");
             return true;
         }
     }
@@ -82,10 +82,16 @@
         }
     }
 
-    public void AssertDominance()
+    public void AssertDominance(string name = "")
     {
         Console.WriteLine(this.Name + " does a T-Pose.");
-        Console.WriteLine("You feel threatened...");
+        if (name == "")
+        {
+            Console.WriteLine("You feel threatened...");
+        } else
+        {
+            Console.WriteLine(name + " feels threatened...");
+        }
         //Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠋⣽⠷⣶⣾⡙⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         //Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣶⣶⣿⣿⣿⡿⣾⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
         //Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣽⣯⣥⣥⣥⣩⣨⣿⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
