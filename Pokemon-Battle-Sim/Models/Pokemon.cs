@@ -1,4 +1,4 @@
-﻿public class Pokemon
+﻿public abstract class Pokemon
 {
     private string Name;
     private string Nickname;
@@ -22,10 +22,7 @@
         Sound = sound;
     }
 
-    public void BattleCry()
-    {
-        Console.WriteLine(this.GetNickname() + ": " + this.GetSound() + "!");
-    }
+    public abstract void BattleCry();
 
     public bool EquipItem(Item item)
     {
@@ -75,6 +72,9 @@
         return this.Item;
     }
 
-
+    public void ChangeSound(string sound)
+    {
+        this.Sound = sound;
+    }
    
 }

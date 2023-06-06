@@ -4,4 +4,9 @@
     {
 
     }
+
+    public override void BattleCry()
+    {
+        Console.WriteLine(this.GetNickname() + ": " + this.GetSound() + "!");
+    }
 }

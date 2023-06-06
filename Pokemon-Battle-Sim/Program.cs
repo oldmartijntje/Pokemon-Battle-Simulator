@@ -25,6 +25,8 @@
                 player2.SelectPokemonFromBelt(i);
                 player1.GetActivePokemon().BattleCry();
                 player2.GetActivePokemon().BattleCry();
+                Console.WriteLine(player2.GetName() + " punches " + player2.GetActivePokemon().GetNickname());
+                player2.GetActivePokemon().ChangeSound("SKREEEEEEEEEEEEEEEE");
                 player2.GetActivePokemon().BattleCry();
                 player1.PutPokemonBackInBall();
                 player2.PutPokemonBackInBall();
