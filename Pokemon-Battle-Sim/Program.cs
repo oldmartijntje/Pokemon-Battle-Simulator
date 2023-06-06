@@ -11,10 +11,20 @@
         name = Console.ReadLine();
         emptyList = new List<Pokeball>();
         Trainer player2 = new Trainer(name, emptyList);
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 2; i++)
         {
             player1.AddPokeballToBelt(new Pokeball(new Charmander("Koos Naamloos")));
             player2.AddPokeballToBelt(new Pokeball(new Charmander("Spongebob")));
+        }
+        for (int i = 0; i < 2; i++)
+        {
+            player1.AddPokeballToBelt(new Pokeball(new Squirtle("Donald mTrumpet")));
+            player2.AddPokeballToBelt(new Pokeball(new Squirtle("Cola")));
+        }
+        for (int i = 0; i < 2; i++)
+        {
+            player1.AddPokeballToBelt(new Pokeball(new Bulbasaur("MIO")));
+            player2.AddPokeballToBelt(new Pokeball(new Bulbasaur("Dolfy Itler")));
         }
         while (true)
         {
