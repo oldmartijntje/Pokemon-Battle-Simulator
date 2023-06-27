@@ -1,6 +1,6 @@
 ﻿public class Bulbasaur : Pokemon
 {
-    public Bulbasaur(string nickname) : base("Bulbasaur", nickname, "Grass", null, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "Fire")
+    public Bulbasaur(string nickname) : base("Bulbasaur", nickname, TypeOfPokemon.Grass, null, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", TypeOfPokemon.Fire)
     {
 
     }

@@ -2,12 +2,12 @@
 {
     private string Name;
     private string Nickname;
-    private string Type;
+    private TypeOfPokemon Type;
     //private Item? Item;
     private string Sound;
-    private string Weakness;
+    private TypeOfPokemon Weakness;
 
-    public Pokemon(string name, string? nickname, string type, Item? item, string sound, string weakness)
+    public Pokemon(string name, string? nickname, TypeOfPokemon type, Item? item, string sound, TypeOfPokemon weakness)
     {
         Name = name;
         if (nickname == null || nickname == "")
@@ -58,7 +58,7 @@
         return Nickname;
     }
 
-    public string GetType()
+    public TypeOfPokemon GetType()
     {
         return Type;
     }
@@ -85,9 +85,16 @@
         this.Sound = sound;
     }
 
-    public string GetWeakness()
+    public TypeOfPokemon GetWeakness()
     {
         return this.Weakness;
     }
-   
+
+    public enum TypeOfPokemon
+    {
+        Fire,
+        Water,
+        Grass
+    }
+
 }

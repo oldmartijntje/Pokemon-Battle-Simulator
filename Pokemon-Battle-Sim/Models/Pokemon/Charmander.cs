@@ -1,6 +1,6 @@
 ﻿public class Charmander : Pokemon
 {
-    public Charmander(string nickname) : base("Charmander", nickname, "Fire", null, "Growl", "Water")
+    public Charmander(string nickname) : base("Charmander", nickname, TypeOfPokemon.Fire, null, "Growl", TypeOfPokemon.Water)
     {
 
     }
