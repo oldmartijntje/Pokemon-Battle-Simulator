@@ -1,6 +1,6 @@
 ﻿public class Dwayne : Pokemon
 {
-    public Dwayne(string nickname) : base("Dwayne", nickname, "Rock", null, "- Dwayne \"The Rock\" Johnson")
+    public Dwayne(string nickname) : base("Dwayne", nickname, "Rock", null, "- Dwayne \"The Rock\" Johnson", "")
     {
 
     }

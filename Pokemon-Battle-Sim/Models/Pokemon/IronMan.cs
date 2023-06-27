@@ -1,6 +1,6 @@
 ﻿public class IronMan : Pokemon
 {
-    public IronMan(string nickname) : base("Bulbasaur", nickname, "Grass", null, "I am ")
+    public IronMan(string nickname) : base("Bulbasaur", nickname, "Grass", null, "I am ", "")
     {
 
     }

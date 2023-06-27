@@ -5,8 +5,9 @@
     private string Type;
     //private Item? Item;
     private string Sound;
+    private string Weakness;
 
-    public Pokemon(string name, string? nickname, string type, Item? item, string sound)
+    public Pokemon(string name, string? nickname, string type, Item? item, string sound, string weakness)
     {
         Name = name;
         if (nickname == null || nickname == "")
@@ -19,6 +20,7 @@
         Type = type;
         //this.Item = item;
         Sound = sound;
+        Weakness = weakness;
     }
 
     public abstract void BattleCry();
@@ -81,6 +83,11 @@
     public void ChangeSound(string sound)
     {
         this.Sound = sound;
+    }
+
+    public string GetWeakness()
+    {
+        return this.Weakness;
     }
    
 }
