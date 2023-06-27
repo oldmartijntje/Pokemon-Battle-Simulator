@@ -118,5 +118,15 @@
         }
     }
 
+    public int GetRoundsPlayed()
+    {
+        return this.CurrentRound;
+    }
+
+    public void SetRoundsToPlay(int number)
+    {
+        this.AmountOfRounds = number;
+    }
+
 
 }

@@ -31,7 +31,16 @@
         }
         
         Battle currentBattle = new Battle(10, player1, player2);
-        currentBattle.PlayFullGame();
+        Arena arena = new Arena(currentBattle);
+        Console.WriteLine("Input the number of battles:");
+        string input = Console.ReadLine();
+        int number = int.Parse(input);
+        for (int i = 0; i < number; i++)
+        {
+            arena.StartBattle();
+            arena.PrintStatistics();
+        }
+        
 
     }
 
