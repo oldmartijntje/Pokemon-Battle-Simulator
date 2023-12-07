@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "/REtvlpaqJLI73wx+a1C4/tLgo3Gg0lq6IPlpPYvmsJA2MxCwFGjSo4IOE5m/3jYoGyMnXl1TIjnRC7xG/RMrQ==",
+  "dgSpecHash": "IippAfQHSo/PY3CQmTUEulil7ghfbKY/NKs0CwUM0yEVa60VAYD0KLGrOOYMCVmr875wKgVx37rxIg8DhD8Vsw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\oldma\\Desktop\\scripts\\.School_ict\\.davinki eindodrachten\\Pokemon-Battle-Simulator\\Pokemon-Battle-Sim\\Pokemon-Battle-Sim.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\oldma\\scripts\\.School_ict\\.davinki eindodrachten\\Pokemon-Battle-Simulator\\Pokemon-Battle-Sim\\Pokemon-Battle-Sim.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\oldma\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\oldma\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\oldma\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\oldma\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

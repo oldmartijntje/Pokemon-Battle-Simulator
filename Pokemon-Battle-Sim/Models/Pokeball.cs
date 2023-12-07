@@ -1,4 +1,4 @@
-﻿public class Pokeball
+﻿public sealed class Pokeball
 {
     private string TypePokeball;
     private Pokemon? Pokemon;

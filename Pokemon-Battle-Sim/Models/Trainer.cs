@@ -5,16 +5,24 @@
     private Pokemon? ActivePokemon;
     private int? ActivePokemonBeltId;
     //private List<Item> Bag;
+    private static int MaximumPokeballs = 6;
 
     public Trainer(string name, List<Pokeball?> belt)
     {
-        Belt = belt.Take(6).ToList();
-        Name = name;
+        try
+        {
+            Belt = belt.Take(MaximumPokeballs).ToList();
+            Name = name;
+        } catch (Exception ex)
+        {
+            Belt = new List<Pokeball>();
+            Console.WriteLine(ex.ToString());
+        }
     }
 
     public bool AddPokeballToBelt(Pokeball pokeball)
     {
-        if (this.GetBelt().Count + 1 > 6)
+        if (this.GetBelt().Count + 1 > this.GetMaximumPokeballs())
         {
             Console.WriteLine(this.GetName() + ": Sorry " + pokeball.GetPokemonNickname("Empty Pokeball") + ", but my belt is already full. Your pokeball can't fit on my belt.");
             return false;
@@ -29,9 +37,9 @@
 
     public Pokeball? SwitchPokeballOnBelt(Pokeball pokeball, int Id)
     {
-        if (Id -1 > 5)
+        if (Id -1 > (this.GetMaximumPokeballs() - 1))
         {
-            Console.WriteLine(this.GetName() + ": I can't have more than 6 pokeballs on my belt.");
+            Console.WriteLine(this.GetName() + ": I can't have more than "+ this.GetMaximumPokeballs() + " pokeballs on my belt.");
             return null;
         }
         else if (Id == this.GetActivePokemonBeltId())
@@ -149,7 +157,7 @@
             this.ActivePokemonBeltId = null;
             return true;
         }
-        else if (id > 5)
+        else if (id > (this.GetMaximumPokeballs() - 1))
         {
             return false;
         }
@@ -163,6 +171,11 @@
     public string GetName()
     {
         return this.Name;
+    }
+
+    public int GetMaximumPokeballs()
+    {
+        return Trainer.MaximumPokeballs;
     }
 
     private List<Pokeball> GetBelt()
