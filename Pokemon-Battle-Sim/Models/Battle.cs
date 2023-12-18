@@ -64,11 +64,11 @@
 
     private int checkRoundWinner()
     {
-        if (this.Trainers[0].GetActivePokemon().GetType() == this.Trainers[1].GetActivePokemon().GetType())
+        if (this.Trainers[0].GetActivePokemon().GetPokemonType() == this.Trainers[1].GetActivePokemon().GetPokemonType())
         {
             Console.WriteLine("\n"+this.Trainers[0].GetActivePokemon().GetNickname() + " and " + this.Trainers[1].GetActivePokemon().GetNickname() + " are holding an endless staring contest.\nLet's just get this over with, it's a draw!\n");
             return -1;
-        } else if (this.Trainers[0].GetActivePokemon().GetType() == this.Trainers[1].GetActivePokemon().GetWeakness())
+        } else if (Pokemon.TypeCompatibility[this.Trainers[0].GetActivePokemon().GetPokemonType()].Contains(this.Trainers[1].GetActivePokemon().GetPokemonType()))
         {
             Console.WriteLine("\n" + this.Trainers[0].GetActivePokemon().GetNickname() + " bodyslammed " + this.Trainers[1].GetActivePokemon().GetNickname() + ".\n" + this.Trainers[1].GetActivePokemon().GetNickname() + " is KO!\n");
             Console.WriteLine(this.Trainers[0].GetActivePokemon().GetNickname() + " has won this round!\n");

@@ -1,6 +1,6 @@
 ﻿public class Squirtle : Pokemon
 {
-    public Squirtle(string nickname) : base("Squirtle", nickname, TypeOfPokemon.Water, null, "Meow", TypeOfPokemon.Grass)
+    public Squirtle(string nickname) : base("Squirtle", nickname, TypeOfPokemon.Water, null, "Meow")
     {
 
     }

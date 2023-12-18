@@ -5,9 +5,8 @@
     private TypeOfPokemon Type;
     //private Item? Item;
     private string Sound;
-    private TypeOfPokemon Weakness;
 
-    public Pokemon(string name, string? nickname, TypeOfPokemon type, Item? item, string sound, TypeOfPokemon weakness)
+    public Pokemon(string name, string? nickname, TypeOfPokemon type, Item? item, string sound)
     {
         Name = name;
         if (nickname == null || nickname == "")
@@ -20,7 +19,6 @@
         Type = type;
         //this.Item = item;
         Sound = sound;
-        Weakness = weakness;
     }
 
     public abstract void BattleCry();
@@ -32,7 +30,7 @@
             this.Item = item;
             Console.WriteLine(this.GetNickname() + " has equipped " + Item.GetAmount() + "X " + Item.GetName() + ".");
             return true;
-        } else if (this.Item.GetType() == item.GetType()) 
+        } else if (this.Item.GetPokemonType() == item.GetPokemonType()) 
         {
             this.Item.SetAmount(this.Item.GetAmount() + item.GetAmount());
             Console.WriteLine(this.GetNickname() + " has equippped " + item.GetAmount() + " more " + Item.GetName() + ", total is: " + this.Item.GetAmount() + ".");
@@ -58,7 +56,7 @@
         return Nickname;
     }
 
-    public TypeOfPokemon GetType()
+    public TypeOfPokemon GetPokemonType()
     {
         return Type;
     }
@@ -85,16 +83,18 @@
         this.Sound = sound;
     }
 
-    public TypeOfPokemon GetWeakness()
-    {
-        return this.Weakness;
-    }
-
     public enum TypeOfPokemon
     {
         Fire,
         Water,
         Grass
     }
+
+    public static Dictionary<TypeOfPokemon, List<TypeOfPokemon>> TypeCompatibility = new Dictionary<TypeOfPokemon, List<TypeOfPokemon>>()
+    {
+        { TypeOfPokemon.Fire, new List<TypeOfPokemon> { TypeOfPokemon.Grass } },
+        { TypeOfPokemon.Water, new List<TypeOfPokemon> { TypeOfPokemon.Fire } },
+        { TypeOfPokemon.Grass, new List<TypeOfPokemon> { TypeOfPokemon.Water } }
+    };
 
 }
