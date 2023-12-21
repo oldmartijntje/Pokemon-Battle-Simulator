@@ -1,4 +1,4 @@
-﻿enum TypeOfPokemon
+﻿public enum TypeOfPokemon
 {
     Fire,
     Water,

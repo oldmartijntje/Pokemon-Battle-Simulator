@@ -83,12 +83,12 @@
         this.Sound = sound;
     }
 
-    public enum TypeOfPokemon
+    /*public enum TypeOfPokemon
     {
         Fire,
         Water,
         Grass
-    }
+    }*/
 
     public static Dictionary<TypeOfPokemon, List<TypeOfPokemon>> TypeCompatibility = new Dictionary<TypeOfPokemon, List<TypeOfPokemon>>()
     {
